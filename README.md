@@ -1,14 +1,14 @@
 py-gmail
 ========
 
-A python script that fetches emails from an GMail account and wraps them with a latex code that can be used to make a booklet or a manuscript
+A python script that fetches emails from an GMail account and wraps them with a latex code that can be used to make a booklet
 
 
-The `crawler.py` reads the user-specific data from the `config.py` (not included here, you should create your own). It uses imap to connect to the GMail inbox and fetches the email communication between the email address 1 and the email address 2 (also specified in the `config.py`). 
+The `crawler.py` reads user-specific data from the `config.py` (not included here, you should create your own). It uses imap to connect to the GMail inbox and fetches the email communication between the email address 1 and the email address 2 (also specified in the `config.py`). 
 
-For each email, a `.tex` file is generated with a latex-header (from, to, date, subject) and the email body text. The .tex file is named after a unique identifier (UID) of the email that doesn't change over time. For example, the body of the email with the UID 123 will be storead as `123.tex`. Tex mails are stored in a directory specified by the config file, which is newly created if it doesn't exist. The script also generates a `mails.tex` with a list of includes for every email in the corresponding directory.
+For each email, a `.tex` file is generated with a latex-header (from, to, date, subject) and the email body text. The `.tex` file is named after a unique identifier (UID) of the email that doesn't change over time. For example, the body of the email with the UID 123 will be storead as `123.tex`. Tex mails are stored in a directory specified by the config file, which is newly created if it doesn't exist. The script also generates a `mails.tex` with a list of includes for every email in the corresponding directory.
 
-So, if your inbox contains 3 emails with UIDs 1, 2 and 3, at the end of execution of the script you'll have:
+So, if your inbox contains three emails with UIDs 1, 2 and 3, at the end of execution of the script you'll have:
 ```
 1.tex
 2.tex
@@ -44,7 +44,7 @@ Where `mails.tex` will look like:
 ```
 
 
-`mails.tex` can be used in latex documents such as article, book etc to generate a nicely organized manuscript. The [parse lines](http://www.ctan.org/tex-archive/macros/latex/contrib/parselines) environment takes care of the proper formatting of the text. I used my [Master's thesis template](https://github.com/ikajic/uni-templates/tree/master/thesis/masterthesis) to create a book-like manuscript and (PDFBooklet)[http://pdfbooklet.sourceforge.net/] to obtain proper page ordering for printing.
+`mails.tex` can be used in latex documents such as article, book etc to generate a nicely organized document with a table of contents etc. The [parse lines](http://www.ctan.org/tex-archive/macros/latex/contrib/parselines) environment takes care of the proper formatting of the text. I used my [Master's thesis template](https://github.com/ikajic/uni-templates/tree/master/thesis/masterthesis) to create a book-like manuscript and [PDFBooklet](http://pdfbooklet.sourceforge.net/) to obtain proper page ordering for printing.
 
 
 ### config.py
@@ -61,4 +61,5 @@ mails_dir = "./mails/"
 mailaddr1 = "alice@mail.com"
 mailaddr2 = "bob@gmail.com"
 ```
+
 
