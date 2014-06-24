@@ -1,8 +1,9 @@
-py-gmail
+pyloveletters
 ========
 
-A python script that fetches emails from an GMail account and wraps them with a latex code that can be used to make a booklet
+A python script that fetches emails exchanged between the two people from a GMail account. The script also wraps emails with a latex code such that one can make a nice booklet out of the email conversations.
 
+### crawler.py
 
 The `crawler.py` reads user-specific data from the `config.py` (not included here, you should create your own). It uses imap to connect to the GMail inbox and fetches the email communication between the email address 1 and the email address 2 (also specified in the `config.py`). 
 
