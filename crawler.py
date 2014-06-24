@@ -1,3 +1,9 @@
+__author__ = "Ivana Kajic"
+__copyright__ = "Copyright (C) 2014 Ivana Kajic"
+__license__ = "WTFPL"
+__version__ = "1.0"
+
+
 import imaplib
 import email
 import os
